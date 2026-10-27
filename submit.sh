@@ -3,13 +3,11 @@
 #SBATCH --output=python_test.out
 #SBATCH --error=python_test.err
 #SBATCH --time=01:00:00
-#SBATCH --partition=large
+#SBATCH --partition=debug
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-
 
 iterations=300000000
 
 # Run a Python command
 apptainer exec python.sif python3 main.py $iterations
-
